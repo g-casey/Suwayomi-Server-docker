@@ -40,6 +40,7 @@ RUN groupadd --gid 1000 suwayomi && \
     mkdir -p /home/suwayomi/.local/share/Tachidesk
 
 WORKDIR /home/suwayomi
+ENV TACHIDESK_RELEASE_DOWNLOAD_URL=https://github.com/Suwayomi/Suwayomi-Server/releases/download/v2.0.1727/Suwayomi-Server-v2.0.1727.jar
 
 # Copy the app into the container
 RUN curl -s --create-dirs -L $TACHIDESK_RELEASE_DOWNLOAD_URL -o /home/suwayomi/startup/tachidesk_latest.jar
